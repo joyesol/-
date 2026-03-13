@@ -3,230 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scene - 당신의 특별한 순간을 위한 공간</title>
-    <meta
-      name="description"
-      content="사용자의 상황(TPO)에 최적화된 공간 디테일을 제공하는 맛집 검색 서비스"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    />
+    <title>Re:Cast</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="app">
-    <div class="app__container">
-      <!-- F-1. 홈 화면 (Discovery) -->
-      <main class="home-screen">
-        <header class="header">
-          <h1 class="header__title">Scene</h1>
-        </header>
+  <body>
+    <div class="recast-app">
+      <header class="header">
+        <h1 class="header__logo">Re:Cast</h1>
+        <button class="header__search-btn">🔍</button>
+      </header>
 
-        <!-- TPO Quick Menu -->
-        <nav class="tpo-nav">
-          <ul class="tpo-nav__list">
-            <li class="tpo-nav__item">
-              <button
-                class="tpo-nav__button tpo-nav__button--active"
-                type="button"
-              >
-                <span class="tpo-nav__icon" aria-hidden="true">💝</span>
-                <span class="tpo-nav__label">데이트</span>
-              </button>
-            </li>
-            <li class="tpo-nav__item">
-              <button class="tpo-nav__button" type="button">
-                <span class="tpo-nav__icon" aria-hidden="true">💼</span>
-                <span class="tpo-nav__label">비즈니스</span>
-              </button>
-            </li>
-            <li class="tpo-nav__item">
-              <button class="tpo-nav__button" type="button">
-                <span class="tpo-nav__icon" aria-hidden="true">🍼</span>
-                <span class="tpo-nav__label">키즈존</span>
-              </button>
-            </li>
-            <li class="tpo-nav__item">
-              <button class="tpo-nav__button" type="button">
-                <span class="tpo-nav__icon" aria-hidden="true">🪑</span>
-                <span class="tpo-nav__label">테이블석</span>
-              </button>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Empty State -->
-        <section class="empty-state">
-          <p class="empty-state__message">
-            정민님이 찾으시는 장면을 준비 중이에요
-          </p>
-          <button class="button button--secondary" type="button">
-            다른 인기 장소 보기
-          </button>
+      <main class="content">
+        <section class="section section--hero">
+          <h2 class="section__title">오늘의 공연</h2>
+          <div class="hero-slider">
+            <div class="hero-card">
+              <div class="hero-card__image">포스터</div>
+              <div class="hero-card__info">
+                <span class="hero-card__tag">인기</span>
+                <h3 class="hero-card__title">뮤지컬 &lt;레미제라블&gt;</h3>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <!-- Recommended Scenes -->
-        <section class="scene-list">
-          <h2 class="scene-list__title">추천 장면</h2>
+        <section class="section">
+          <h2 class="section__title">인기 캐스팅 해석</h2>
+          <div class="scroll-container">
+            <article class="interpretation-card">
+              <div class="interpretation-card__thumb"></div>
+              <div class="interpretation-card__details">
+                <p class="interpretation-card__actor">배우 A 캐스팅</p>
+                <p class="interpretation-card__keyword">#슬픔 #섬세한_감정선</p>
+                <p class="interpretation-card__summary">
+                  "이번 시즌 가장 완벽한 감정 해석..."
+                </p>
+              </div>
+            </article>
+            <article class="interpretation-card">
+              <div class="interpretation-card__thumb"></div>
+              <div class="interpretation-card__details">
+                <p class="interpretation-card__actor">배우 B 캐스팅</p>
+                <p class="interpretation-card__keyword">#에너지 #폭발적_성량</p>
+                <p class="interpretation-card__summary">
+                  "무대를 압도하는 카리스마가 일품..."
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
 
-          <article class="scene-card">
-            <div class="scene-card__media">
-              <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800"
-                alt="로맨틱 이탈리안 비스트로 외부 전경"
-                class="scene-card__image"
-              />
+        <section class="section">
+          <h2 class="section__title">최근 관람 기록</h2>
+          <div class="record-list">
+            <div class="record-item">
+              <div class="record-item__img"></div>
+              <div class="record-item__info">
+                <p class="record-item__name">지킬앤하이드</p>
+                <p class="record-item__meta">26.03.05 | 조승우 캐스트</p>
+              </div>
             </div>
-            <div class="scene-card__content">
-              <h3 class="scene-card__title">로맨틱 이탈리안 비스트로</h3>
-              <p class="scene-card__desc">분위기 좋은 한강뷰 데이트 코스</p>
-            </div>
-          </article>
+          </div>
         </section>
       </main>
 
-      <hr class="divider" />
-
-      <!-- F-2. 스마트 셀렉터 (Filter Engine) -->
-      <section class="filter-engine">
-        <header class="filter-engine__header">
-          <h2 class="filter-engine__title">스마트 셀렉터</h2>
-        </header>
-
-        <form class="filter-form">
-          <fieldset class="filter-group">
-            <legend class="filter-group__title">상황 요건</legend>
-            <div class="filter-group__checkboxes">
-              <label class="custom-checkbox">
-                <input type="checkbox" class="custom-checkbox__input" checked />
-                <span class="custom-checkbox__box"></span>
-                <span
-                  class="custom-checkbox__label custom-checkbox__label--active"
-                  >조용한 대화</span
-                >
-              </label>
-              <label class="custom-checkbox">
-                <input type="checkbox" class="custom-checkbox__input" />
-                <span class="custom-checkbox__box"></span>
-                <span class="custom-checkbox__label">넓은 테이블</span>
-              </label>
-              <label class="custom-checkbox">
-                <input type="checkbox" class="custom-checkbox__input" />
-                <span class="custom-checkbox__box"></span>
-                <span class="custom-checkbox__label">유아용 의자</span>
-              </label>
-            </div>
-          </fieldset>
-
-          <fieldset class="filter-group">
-            <legend class="filter-group__title">예산 (자율 조정)</legend>
-            <div class="price-input">
-              <label class="price-input__field">
-                <span class="sr-only">최소 예산</span>
-                <input type="number" class="price-input__native" placeholder="최소 금액" value="30000" />
-                <span class="price-input__unit">원</span>
-              </label>
-              <span class="price-input__separator" aria-hidden="true">~</span>
-              <label class="price-input__field">
-                <span class="sr-only">최대 예산</span>
-                <input type="number" class="price-input__native" placeholder="최대 금액" value="70000" />
-                <span class="price-input__unit">원</span>
-              </label>
-            </div>
-            <div class="range-slider">
-              <input
-                type="range"
-                class="range-slider__input"
-                min="10000"
-                max="100000"
-                step="10000"
-                value="70000"
-                aria-label="최대 예산 조정"
-              />
-              <div class="range-slider__labels">
-                <span class="range-slider__label">1만원</span>
-                <span class="range-slider__label">10만원+</span>
-              </div>
-            </div>
-          </fieldset>
-
-          <div class="filter-form__actions">
-            <button class="button button--primary button--full" type="submit">
-              12개의 장면 보기
-            </button>
-          </div>
-        </form>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- F-3. 장면 상세 페이지 (Detail View) -->
-      <section class="scene-detail">
-        <div class="scene-detail__media">
-          <img
-            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&q=80&w=800"
-            alt="우디 어스 로스터리 내부 전경"
-            class="scene-detail__image"
-          />
-        </div>
-
-        <div class="scene-detail__body">
-          <header class="scene-detail__header">
-            <h1 class="scene-detail__title">우디 어스 로스터리</h1>
-            <p class="scene-detail__desc">
-              성수동 골목에 숨겨진 나무 향 가득한 공간
-            </p>
-          </header>
-
-          <div class="scene-checkpoint">
-            <h2 class="scene-checkpoint__title sr-only">
-              공간 디테일 체크포인트
-            </h2>
-            <ul class="scene-checkpoint__list">
-              <li class="scene-checkpoint__item">
-                <span class="scene-checkpoint__icon" aria-hidden="true">✔</span>
-                <span class="scene-checkpoint__text"
-                  >옆 테이블과 간격이 넓어 대화하기 좋아요</span
-                >
-              </li>
-              <li class="scene-checkpoint__item">
-                <span class="scene-checkpoint__icon" aria-hidden="true">✔</span>
-                <span class="scene-checkpoint__text"
-                  >좌식이 아닌 편안한 등받이 의자가 있어요</span
-                >
-              </li>
-              <li class="scene-checkpoint__item">
-                <span class="scene-checkpoint__icon" aria-hidden="true">✔</span>
-                <span class="scene-checkpoint__text"
-                  >은은한 간접 조명으로 눈이 편안해요</span
-                >
-              </li>
-            </ul>
-          </div>
-
-          <section class="review-section">
-            <h2 class="review-section__title">방문자 경험담</h2>
-            <article class="review-card">
-              <header class="review-card__header">
-                <span class="review-card__author">김정민 님 (40대)</span>
-              </header>
-              <p class="review-card__content">
-                클라이언트와 함께 식사하는 중요한 자리를 찾고 있었는데, 이 곳이
-                딱이었습니다. 음악 소리가 크지 않아 대화에 온전히 집중할 수
-                있었고, 조명도 적당해서 분위기가 아주 좋았습니다.
-              </p>
-            </article>
-          </section>
-        </div>
-
-        <footer class="scene-detail__footer">
-          <button class="button button--primary button--full" type="button">
-            이 장소 예약하기
-          </button>
-        </footer>
-      </section>
+      <nav class="nav-bar">
+        <div class="nav-bar__item nav-bar__item--active">🏠<br />Home</div>
+        <div class="nav-bar__item">📖<br />Guide</div>
+        <div class="nav-bar__item">🔴<br />Record</div>
+        <div class="nav-bar__item">⚖️<br />Compare</div>
+        <div class="nav-bar__item">👤<br />My</div>
+      </nav>
     </div>
   </body>
 </html>
